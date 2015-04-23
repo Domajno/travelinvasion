@@ -196,6 +196,12 @@ margin-left: 2em;
     top:1px;
 }
 
+#share-panel {
+    position: absolute;
+    bottom: 0;
+    padding: 0;
+}
+
 #share-panel li {
     list-style: none;
     display: inline;

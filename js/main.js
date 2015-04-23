@@ -8,7 +8,15 @@ var server = 'travel-domajno.rhcloud.com',
 
 $(function () {
 
-    var map = L.map('map').setView([31, 21], 3);
+    var map = L.map('map').setView([31, 85], 3);
+
+    // Try to set map's longitude according to users position; 
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(setLongitude);
+    }
+    function setLongitude(position) {
+    	map.setView([map.getCenter().lat, position.coords.longitude], map.getZoom());
+    }
 
 
     L.tileLayer('//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

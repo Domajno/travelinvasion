@@ -8,7 +8,7 @@ var server = 'travel-domajno.rhcloud.com',
 
 $(function () {
 
-    var map = L.map('map').setView([31, 85], 3);
+    var map = L.map('map').setView([31, 10], 3);
 
     // Try to set map's longitude according to users position; 
     if (navigator.geolocation) {

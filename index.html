@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html> 
+ 
+<html>
+ 
+	<head>
+ 
+		<meta charset="UTF-8" />
+		<meta name="description" content="Your alternative travel guide and travel blog search engine." />
+		<meta name="keywords" content="travel blogs,travel guide,travel articles,tavel destinations,travel search engine" />
+ 
+		<title>Travel Invasion</title>
+		
+		<link rel="stylesheet" href="js/lib/leaflet/leaflet.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		
+ 
+		<!--[if lt IE 9 ]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]--> 
+ 
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-55880703-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+		</script>
+ 
+	</head>
+ 
+	<body class="" lang="en-US">
+ 
+ 		<div id="left-panel" class="map">
+ 			<div id="message"></div>
+			<div id="map"></div>
+			<div id="feedback">				
+				<form id="feedback-form">
+					<h2>What do you think about Travel Invasion?</h2>
+					<p>Your opinion matters a lot for us! Thank you for your time and participation.</p>
+					<ul>
+						<li>Sex: 
+							<input type="radio" name="sex" value="male">Male
+							<input type="radio" name="sex" value="female">Female
+						</li>
+						<li>Age: 
+							<input type="radio" name="age" value="under18">&lt;18
+							<input type="radio" name="age" value="18-25">18-25
+							<input type="radio" name="age" value="26-35">26-35
+							<input type="radio" name="age" value="more36">&gt;36
+						</li>
+
+						<li style="margin-top:2em;"><input type="checkbox" name="profile" value="interested_to_use">Would you be interested in using Travel Invasion?</li>
+						<li><input type="checkbox" name="profile" value="easy_to_use">Do you find Travel Invasion easy to use?</li>
+						<li><input type="checkbox" name="profile" value="travel_often">Do you travel often?</li>
+						<li><input type="checkbox" name="profile" value="blogger">Do you write a blog?</li>
+						<li><input type="checkbox" name="profile" value="travel_blogger">Do you write a travel blog?</li>
+
+						<li style="margin-top:2em;">What would you you Travel Invasion for?</li>
+						<li><input type="checkbox" name="purpose" value="plan_travel">plan your travel
+							<input type="checkbox" name="purpose" value="travel_inspirations">find travel inspirations
+							<input type="checkbox" name="purpose" value="brows_blogs">browse travel blogs
+						</li>	
+
+						<li style="margin-top:2em;"><textarea name="others" rows="1" placeholder="Any other feedback you might like to add"></textarea></li>
+						<li><textarea name="newsletter" rows="1" placeholder="Your email if you would like to hear news from us"></textarea></li>						
+
+						<li style="margin-top:2em;margin-bottom:2em;"><a id="feedback-submit-btn" href="#">Submit</a></li>					
+					</ul>
+				</form>				
+			</div>
+			<div id="register">				
+				<form id="register-form">
+					<h2>Would you like your blog to appear in Travel Invasion?</h2>
+					<p style="width: 90%;">Give us the link to your blog and we will analyze the articles you wrote and put them on our map. We will be automatically checking from time to time if you wrote something new so you do not need to worry about the updates.</p>
+					<p>The only thing we require for now is that your blog has a RSS feed.</p>
+					<ul>
+						<li><textarea name="blog_url" rows="1" placeholder="URL address of your blog"></textarea></li>
+						<li style="margin-top:1em;margin-bottom:3em;"><input type="checkbox" name="RSSdunno" value="true">I do not know what RSS feed is.</li>	
+						<li style="margin-top:2em;"><a id="register-submit-btn" href="#">Register</a></li>					
+					</ul>
+				</form>				
+			</div>
+		</div>
+		<div id="right-panel">
+			<div id="intro">
+				<img src="img/logo.svg" style="width: 80%; margin-bottom:2em;"/>
+				<p>Welcome to Travel Invasion - your alternative travel guide.</p>
+				<p>Are you going to tavel and would like to read interesting articles about your destination? Are you bored with typical travel guides which only mention mainstream tourist attractions?</p> 
+				<p>This website is for you! You can think of it as a search engine for travel blogs which allows you to search by destination; directly on the map. There are so many wonderful people travelling all over the world and sharing their experiences. All we want is to give you an easier access to those resources.</p>
+			</div>
+			<div id="articles">
+			</div>
+		</div>
+        <div id="menu">
+            <ul>
+                <li id="menu-home"><img src="img/logo_mini.svg" style="width:40px;margin:10px;" /><span>Home</span></li>
+            </ul>
+            <ul style="position: absolute;bottom: 0px;">            
+                <li id="menu-map"><img src="img/appbar.map.treasure.png"/><span>Map</span></li>
+                <li id="menu-register"><img src="img/appbar.book.hardcover.open.writing.png"/><span>Register</span></li>
+                <li id="menu-feedback"><img src="img/appbar.thumbs.up.png"/><span>Feedback</span></li>
+            </ul>
+        </div>
+		
+		<script src="js/lib/leaflet/leaflet.js"></script>
+		<script src="js/main.js"></script>
+        <script>
+            // Adjust window size - responsive design
+            $(function() {
+                $(window).bind('resize', function(){
+                    $('#right-panel').css('margin-left', $('#map').width() + 'px');
+                    $('#right-panel').css('height', $('#map').height() - parseInt($('#right-panel').css('paddingTop')) - parseInt($('#right-panel').css('paddingBottom')) + 'px');
+                })
+                $('#right-panel').css('margin-left', $('#map').width() + 'px');
+                $('#right-panel').css('height', $('#map').height() - parseInt($('#right-panel').css('paddingTop')) - parseInt($('#right-panel').css('paddingBottom')) + 'px');
+            });
+        </script>
+		
+	</body>
+ 
+</html>

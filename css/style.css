@@ -1,0 +1,197 @@
+body{
+    margin:0px;
+    overflow: hidden;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+#left-panel>div {
+    display: none;
+}
+.map #map {
+    display: block;
+}
+
+.feedback #feedback {
+    display: block;
+    overflow: auto;
+}
+
+.register #register {
+    display: block;
+    overflow: auto;
+}
+
+#feedback, #register {
+    background-color: #45337F;
+    color: #EBE5FF;
+}
+form {
+    padding-top: 2em;
+    padding-left: 2em;
+}
+form textarea, #feedback-submit-btn, #register-submit-btn{
+    width: 90%;
+    background-color: #45337F;
+    color: #EBE5FF;
+    border: 1px solid #EBE5FF;
+    border-radius: 0.5em;
+    padding: 1em;
+    text-decoration: none;
+    margin-top: 0.1em;
+}
+form ul{
+    list-style: none;
+    padding-left:0;
+}
+form li{
+    margin-top: 0.5em;
+}
+form input{
+    margin-right: 1em;
+    margin-left: 1em;
+}
+
+#message{
+    width: 65%;
+    padding: 1em 0 1em 0;
+    display: block;
+    position: absolute;
+    bottom: 4em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #678CFF;
+    z-index: 100;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+ 
+#map, #feedback, #register{
+    width:65%;
+    height:100%;
+    position:absolute;
+}
+ 
+#right-panel{
+    padding: 1em;
+    overflow-y: auto;
+    margin-right:40px;
+}
+ 
+.article{
+    margin-top:1em;
+    padding: 0.8em;
+    border-bottom: 1px solid #eee;
+}
+.article:hover{
+    background-color: rgb(229, 216, 255);
+}
+ 
+.article-title{
+    color: #4E4E4E;
+    font-family: "Calisto MT", "Bookman Old Style", Bookman, "Goudy Old Style", Garamond, "Hoefler Text", "Bitstream Charter", Georgia, serif;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.article-url{
+    font-size: x-small;
+    padding-bottom: 5px;
+    color: #B0AEB9;
+    font-family: arial,sans-serif;
+}
+.article-footer{
+    font-size: 70%;
+    color: #8D8D8D;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-variant: small-caps;
+    padding-top: 0.5em;
+}
+ 
+#intro{
+    padding: 2em;
+    text-align: center;
+}
+ 
+#intro p {
+    font-size: small;
+    padding-bottom: 5px;
+    text-align: justify;
+}
+ 
+.by{
+margin-left: 2em;
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    font-variant: normal;
+    color: #4E4E4E;
+}
+ 
+#menu{
+    position: absolute;
+    width: 160px;
+    height: 100%;
+    top: 0px;
+    right: -100px;
+    background-color: #678CFF;
+}
+#menu:hover{
+    background-color: #3C66E9;
+}
+#menu img{
+    width:60px;
+}
+#menu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#menu ul li span{
+    position: relative;
+    top: -23px;
+    color: #fff;
+    font-weight: bold;
+}
+#menu ul li span:hover{
+    color: #ddd;
+    cursor: default;
+}
+ 
+.cluster-marker {
+    -webkit-box-shadow: rgba(255, 255, 255, 0.298039) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0980392) 0px 1px 0px 0px;
+    background-color: rgb(199, 173, 255);
+ 
+    border-bottom-color: rgb(154, 154, 155);
+    border-bottom-left-radius: 140px;
+    border-bottom-right-radius: 140px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-left-color: rgb(154, 154, 155);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(154, 154, 155);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(154, 154, 155);
+    border-top-left-radius: 140px;
+    border-top-right-radius: 140px;
+    border-top-style: solid;
+    border-top-width: 1px;
+ 
+    box-shadow: rgba(255, 255, 255, 0.298039) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.0980392) 0px 1px 0px 0px;
+    color: rgb(60, 60, 60);
+ 
+    cursor: pointer;
+ 
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+    line-height: 2.6em;
+ 
+    height: 32px;
+    width: 32px;
+}
+.cluster-marker:hover {
+    background-color: rgba(199, 173, 255, 0.5);
+}.cluster-marker:active {
+    position:relative;
+    top:1px;
+}

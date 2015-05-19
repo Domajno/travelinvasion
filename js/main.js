@@ -8,7 +8,9 @@ var server = 'travel-domajno.rhcloud.com',
 
 $(function () {
 
-    var map = L.map('map').setView([31, 10], 3);
+    var map = L.map('map', {
+    	zoomControl: false
+    }).setView([31, 10], 3);
 
     // Try to set map's longitude according to users position; 
     if (navigator.geolocation) {
@@ -23,6 +25,8 @@ $(function () {
         maxZoom: 8,
         minZoom: 2
     }).addTo(map);
+
+    new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
     var getVisibleMap = function(){
         var bounds = map.getBounds();

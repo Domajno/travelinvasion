@@ -207,3 +207,54 @@ margin-left: 2em;
     display: inline;
     margin-left: 0.2em;
 }
+
+#search {
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    padding: 1em;
+    z-index: 100;
+    background-color: #678CFF;
+}
+
+#search input{
+    width: 16em;
+    font-size: large;
+    border: none;
+    color: #FFF;
+    background-color: transparent;
+    transition: color 0.5s ease;
+}
+::-webkit-input-placeholder{
+    width: 16em;
+    font-size: large;
+    border: none;
+    color: #FFF;
+    background-color: transparent;
+    transition: color 0.5s ease;
+}
+input::-moz-input-placeholder {
+    width: 16em;
+    font-size: large;
+    border: none;
+    color: #FFF;
+    background-color: transparent;
+    transition: color 0.5s ease;
+}
+
+#search input:focus::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+#search input:focus {
+    outline: 0;
+}
+
+#search img {
+    position: relative;
+    top: 4px;
+    width: 24px;
+}
+#search img:hover {
+    cursor: pointer;
+}

@@ -109,6 +109,27 @@ $(function () {
 		_gaq.push(['_trackEvent', 'registration', 'submission', 'blog', 1]);
 	});
 
+
+	// SEARCH
+	var search = function() {
+		var query = encodeURIComponent($("#search input").val());
+		var url = 'https://api.tiles.mapbox.com/v4/geocode/mapbox.places/' + query + '.json?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IlhHVkZmaW8ifQ.hAMX5hSW-QnTeRCMAy9A8Q';
+		$.getJSON( url, function(data) {
+		    if(data && data.features && data.features.length){
+		    	var center = data.features[0].center;
+		    	map.setView([center[1], center[0]], 8, {animate: true, duration: 2});
+		    }
+		});
+	}
+
+	$('#search input').keyup(function(ev) {
+	    // 13 is ENTER
+	    if (ev.which === 13) {
+	        search();
+	    }
+	});	
+	$('#search img').bind('click', search);	
+
 });
 
 var articlesFetcher = function(){

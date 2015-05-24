@@ -56,20 +56,6 @@ $(function () {
 		}
 	});
 	
-	//
-	$('#menu').bind('mouseenter', function() {
-		if ($( "#menu" ).css("right") === '-100px') {
-			$( "#menu" ).animate({ right: "0px" }, 250, function() {
-				// Animation complete.
-			});
-		}
-	});
-	$('#menu').bind('mouseleave', function() {		
-		$( "#menu" ).animate({ right: "-100px" }, 400, function() {
-			// Animation complete.
-		});		
-	});
-	
 	$('#menu-home').bind('click', function() {		
 		$('#intro').show();
 		$('#articles').hide();

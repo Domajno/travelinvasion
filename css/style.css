@@ -82,6 +82,7 @@ form input{
     margin-top:1em;
     padding: 0.8em;
     border-bottom: 1px solid #eee;
+    transition: background-color 0.25s ease;
 }
 .article:hover{
     background-color: rgb(229, 216, 255);
@@ -132,9 +133,11 @@ margin-left: 2em;
     top: 0px;
     right: -100px;
     background-color: #678CFF;
+    transition: right 0.5s ease, background-color 0.5s ease;
 }
 #menu:hover{
     background-color: #3C66E9;
+    right: 0px;
 }
 #menu img{
     width:60px;

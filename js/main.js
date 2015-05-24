@@ -120,6 +120,7 @@ $(function () {
 		    	map.setView([center[1], center[0]], 8, {animate: true, duration: 2});
 		    }
 		});
+		_gaq.push(['_trackEvent', 'search', 'query', $("#search input").val(), 1]);
 	}
 
 	$('#search input').keyup(function(ev) {

@@ -4,21 +4,28 @@ body{
     font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
-#left-panel>div {
-    display: none;
-}
+
 .map #map {
-    display: block;
+    z-index: 1000;
+}
+.map #search {
+    z-index: 10000;
 }
 
+#register, #feedback {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
 .feedback #feedback {
-    display: block;
+    z-index: 1000;
     overflow: auto;
+    opacity: 1;
 }
 
 .register #register {
-    display: block;
+    z-index: 1000;
     overflow: auto;
+    opacity: 1;
 }
 
 #feedback, #register {
@@ -54,13 +61,13 @@ form input{
 #message{
     width: 65%;
     padding: 1em 0 1em 0;
-    display: block;
+    display: none;
     position: absolute;
     bottom: 4em;
     margin-left: auto;
     margin-right: auto;
     background-color: #678CFF;
-    z-index: 100;
+    z-index: 100000;
     text-align: center;
     color: #fff;
     font-weight: bold;

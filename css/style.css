@@ -85,6 +85,10 @@ form input{
     margin-right:40px;
 }
  
+#articles {
+    margin-right: 60px;
+}
+
 .article{
     margin-top:1em;
     padding: 0.8em;
@@ -330,7 +334,7 @@ input::-moz-input-placeholder {
     }
     #articles {
         width: 100vw;
-        margin-right: 60px;
+        margin-right: 0px;
     }
 
     #map {

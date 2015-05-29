@@ -301,6 +301,16 @@ input::-moz-input-placeholder {
     #menu .mobile {
         display: block;
     }
+    .mobile h3 {
+        color: #fff;
+        line-height: 66px;
+        margin: auto;
+        text-align: center;
+    }
+    .mobile img {
+        margin:10px;
+        position:absolute;
+    }
 
     #search {
         display: none;

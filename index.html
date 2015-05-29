@@ -7,6 +7,7 @@
 		<meta charset="UTF-8" />
 		<meta name="description" content="Your alternative travel guide and travel blog search engine." />
 		<meta name="keywords" content="travel blogs,travel guide,travel articles,tavel destinations,travel search engine" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
  
 		<title>Travel Invasion</title>
 		
@@ -131,29 +132,23 @@
 			</div>
 		</div>
         <div id="menu">
-            <ul>
-                <li id="menu-home"><img src="img/logo_mini.svg" style="width:40px;margin:10px;" alt="TravelInvasion mini logo" /><span>Home</span></li>
-            </ul>
-            <ul style="position: absolute;bottom: 0px;">            
-                <li id="menu-map"><img src="img/appbar.map.treasure.png" alt="Back to map"/><span>Map</span></li>
-                <li id="menu-register"><img src="img/appbar.book.hardcover.open.writing.png" alt="Register blog"/><span>Register</span></li>
-                <li id="menu-feedback"><img src="img/appbar.thumbs.up.png" alt="Submit feedback"/><span>Feedback</span></li>
-            </ul>
+        	<div class="desktop">
+	            <ul>
+	                <li id="menu-home"><img src="img/logo_mini.svg" style="width:40px;margin:10px;" alt="TravelInvasion mini logo" /><span>Home</span></li>
+	            </ul>
+	            <ul style="position: absolute;bottom: 0px;">            
+	                <li id="menu-map"><img src="img/appbar.map.treasure.png" alt="Back to map"/><span>Map</span></li>
+	                <li id="menu-register"><img src="img/appbar.book.hardcover.open.writing.png" alt="Register blog"/><span>Register</span></li>
+	                <li id="menu-feedback"><img src="img/appbar.thumbs.up.png" alt="Submit feedback"/><span>Feedback</span></li>
+	            </ul>
+        	</div>
+        	<div class="mobile">
+        		<img src="img/logo_mini.svg" style="width:40px;margin:10px;" alt="TravelInvasion mini logo" />
+        	</div>
         </div>
 		
 		<script src="js/lib/leaflet/leaflet.js"></script>
 		<script src="js/main.js"></script>
-        <script>
-            // Adjust window size - responsive design
-            $(function() {
-                $(window).bind('resize', function(){
-                    $('#right-panel').css('margin-left', $('#map').width() + 'px');
-                    $('#right-panel').css('height', $('#map').height() - parseInt($('#right-panel').css('paddingTop')) - parseInt($('#right-panel').css('paddingBottom')) + 'px');
-                })
-                $('#right-panel').css('margin-left', $('#map').width() + 'px');
-                $('#right-panel').css('height', $('#map').height() - parseInt($('#right-panel').css('paddingTop')) - parseInt($('#right-panel').css('paddingBottom')) + 'px');
-            });
-        </script>
 		
 	</body>
  

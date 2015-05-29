@@ -1,12 +1,20 @@
-/* Map tiles providers
-http://otile2.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png
-http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
- */
 var server = 'travel-domajno.rhcloud.com',
-//var server = 'localhost:5000',
- 	 number_of_blog_views = 0;
+ 	number_of_blog_views = 0,
+ 	isMobile = false;
 
 $(function () {
+
+    $(window).bind('resize', function(){
+    	if($(window).width() > 600) {
+	        $('#right-panel').css('margin-left', $('#map').width() + 'px');
+	        isMobile = false;
+        } else {
+			isMobile = true;
+        }
+        $('#right-panel').css('height', $('#map').height() - parseInt($('#right-panel').css('paddingTop')) - parseInt($('#right-panel').css('paddingBottom')) + 'px');
+    });
+    $(window).trigger("resize");
+               
 
     var map = L.map('map', {
     	zoomControl: false
@@ -26,7 +34,8 @@ $(function () {
         minZoom: 2
     }).addTo(map);
 
-    new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
+    if(!isMobile)
+    	new L.Control.Zoom({ position: 'bottomleft' }).addTo(map);
 
     var getVisibleMap = function(){
         var bounds = map.getBounds();
@@ -43,6 +52,12 @@ $(function () {
     });
     map.on('moveend', function(evt) {
        mapManager(); 
+    });
+    map.on('click', function(){
+    	$("#right-panel").removeClass("active");
+    });
+    map.on('movestart', function(){
+    	$("#right-panel").removeClass("active");
     });
     mapManager();
 	
@@ -132,7 +147,9 @@ var articlesFetcher = function(){
 		cluster = undefined,
 		count = 0;
 	
-	var main = function(cluster_id){
+	var main = function(cluster_id) {
+
+		$("#right-panel").addClass("active");
 		
 		if (cluster === cluster_id)
 			return
@@ -189,10 +206,10 @@ var articlesFetcher = function(){
 				// If scrollbar not present we can load next 10 articles
 				if ($('#right-panel')[0].scrollHeight <= $('#right-panel').outerHeight()) {
 					main();
-					$('#right-panel').css("margin-right", "60px");
+					$('#right-panel').css("margin-right", isMobile ? "0" : "60px");
 				} else {
 					// Adjusting this margin is hiding the scrollbar under menu div.
-					$('#right-panel').css("margin-right", "40px");
+					$('#right-panel').css("margin-right", isMobile ? "0" : "40px");
 				}
             }
         });

@@ -335,6 +335,7 @@ input::-moz-input-placeholder {
     #articles {
         width: 100vw;
         margin-right: 0px;
+        overflow-x: hidden;
     }
 
     #map {

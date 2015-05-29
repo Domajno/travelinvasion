@@ -106,6 +106,7 @@ form input{
     padding-bottom: 5px;
     color: #B0AEB9;
     font-family: arial,sans-serif;
+    white-space: nowrap;
 }
 .article-footer{
     font-size: 70%;
@@ -292,6 +293,7 @@ input::-moz-input-placeholder {
         width: 100%;
         height: 60px;
         right: 0;
+        z-index: 1000;
     }
     #menu .desktop {
         display: none;
@@ -310,6 +312,7 @@ input::-moz-input-placeholder {
         background-color: #eee;
         z-index: 1000;
         margin-right: 0px;
+        padding: 0;
         transition: top 0.5s ease;
     }
     #right-panel.active {
@@ -317,6 +320,7 @@ input::-moz-input-placeholder {
     }
     #articles {
         width: 100vw;
+        margin-right: 60px;
     }
 
     #map {
@@ -324,7 +328,6 @@ input::-moz-input-placeholder {
     }
 
     #left-panel {
-        margin-top: 60px;
         width: 100%;
     }
 }

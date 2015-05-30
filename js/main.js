@@ -17,7 +17,8 @@ $(function () {
                
 
     var map = L.map('map', {
-    	zoomControl: false
+    	zoomControl: false,
+    	maxBounds: L.latLngBounds(L.latLng(-90, -180), L.latLng(90, 180)),
     }).setView([31, 10], 3);
 
     // Try to set map's longitude according to users position; 

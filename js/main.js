@@ -133,6 +133,21 @@ $(function () {
 	});	
 	$('#search img').bind('click', search);	
 
+	// Reporting incorrect place or content
+	$("#articles").bind("click", function(evt) {
+		if ("report place report content".indexOf(evt.target.className) >= 0) {
+
+			var articleUrl = $(evt.target).parent().siblings(".article-url").text(),
+				eventName = evt.target.className.replace("report", "").trim(),
+				message = JSON.stringify({article: articleUrl, event: eventName});
+
+			$.post("//" + server + "/api/report/", message)
+				.done(function(){
+					$(evt.target).addClass("done");
+				});
+		}
+	});
+
 });
 
 var articlesFetcher = function(){
@@ -188,14 +203,6 @@ var articlesFetcher = function(){
 							   '<span class="report content" title="Report content"/>' +
 							   '</div></div>';					
                     out.push(html);
-
-                    // For debugging purposes only - if "decision" key is in the article then it means we are in the debugging mode.
-                    if (article["decision"]) {						
-						var html = '<div class="debug-info">' +	
-							   '<div style="white-space:pre; font-size:x-small;">' + JSON.stringify(article.decision, undefined, 2) + '</div>' +
-							   '</div>';					
-                    	out.push(html);
-					}
                 });
 				
 				if (skip === 0) {

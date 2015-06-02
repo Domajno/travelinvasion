@@ -184,7 +184,8 @@ var articlesFetcher = function(){
 							   '<span>' + new Date(article.date).toGMTString().substr(5,11) + '</span>' +
 							   '<span class="by" style="margin-left:2em;">by</span>' +
 							   '<span style="margin-left:0.4em;">' + article.author + '</span>' +
-							   '<span class="report-incorrect">!</span>' +
+							   '<span class="report place" title="Report incorrect place"/>' +
+							   '<span class="report content" title="Report content"/>' +
 							   '</div></div>';					
                     out.push(html);
 

@@ -12,7 +12,7 @@ body{
     z-index: 10000;
 }
 
-#register, #feedback {
+#register, #feedback, #blog {
     opacity: 0;
     transition: opacity 0.25s ease;
 }
@@ -25,6 +25,12 @@ body{
 .register #register {
     z-index: 1000;
     overflow: auto;
+    opacity: 1;
+}
+
+.blog #blog {
+    z-index: 1000;
+    overflow: hidden;
     opacity: 1;
 }
 
@@ -73,7 +79,7 @@ form input{
     font-weight: bold;
 }
  
-#map, #feedback, #register{
+#map, #feedback, #register, #blog{
     width:65%;
     height:100%;
     position:absolute;

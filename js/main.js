@@ -1,4 +1,5 @@
-var server = 'travel-domajno.rhcloud.com',
+//var server = 'travel-domajno.rhcloud.com',
+var server = 'localhost:5000',
  	number_of_blog_views = 0,
  	isMobile = false;
 
@@ -87,6 +88,10 @@ $(function () {
 
 	$('#menu-register').bind('click', function() {		
 		$('#left-panel').removeClass().addClass("register")
+	});
+
+	$('#menu-blog').bind('click', function() {		
+		$('#left-panel').removeClass().addClass("blog")
 	});
 
 	$('#feedback-submit-btn').bind('click', function() {	

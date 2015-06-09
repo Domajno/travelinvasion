@@ -1,5 +1,4 @@
-//var server = 'travel-domajno.rhcloud.com',
-var server = 'localhost:5000',
+var server = 'travel-domajno.rhcloud.com',
  	number_of_blog_views = 0,
  	isMobile = false;
 

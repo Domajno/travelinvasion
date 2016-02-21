@@ -29,8 +29,8 @@ $(function () {
     	map.setView([map.getCenter().lat, position.coords.longitude], map.getZoom());
     }
 
-    L.tileLayer("//{s}.tiles.mapbox.com/v4/mapbox.emerald/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IlhHVkZmaW8ifQ.hAMX5hSW-QnTeRCMAy9A8Q", {
-        attribution: '<a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox &copy; OpenStreetMap</a>',
+    L.tileLayer("//{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png", {
+        attribution: 'Maps © <a href="http://www.thunderforest.com">Thunderforest</a>, Data © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
         maxZoom: 8,
         minZoom: 2
     }).addTo(map);

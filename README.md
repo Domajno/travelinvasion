@@ -1,2 +1,2 @@
-# travelinvasion
-Frontend application for the travelinvasion.net project.
+# [travelinvasion](http://domajno.github.io/travelinvasion/)
+Frontend application

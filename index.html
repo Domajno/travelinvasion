@@ -1,160 +1,81 @@
-<!DOCTYPE html> 
- 
+<!DOCTYPE html>
 <html>
- 
-	<head>
- 
-		<meta charset="UTF-8" />
-		<meta name="description" content="Your alternative travel guide and travel blog search engine." />
-		<meta name="keywords" content="travel blogs,travel guide,travel articles,tavel destinations,travel search engine" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
- 
-		<title>Travel Invasion</title>
-		
-		<!-- favicons -->
-		<link rel="apple-touch-icon" sizes="57x57" href="img/fav/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="img/fav/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="img/fav/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/fav/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="img/fav/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/fav/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="img/fav/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/fav/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="img/fav/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="img/fav/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
-		<link rel="manifest" href="img/fav/manifest.json">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="img/fav/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Your alternative travel guide and travel blog search engine." />
+    <meta name="keywords" content="travel blogs,travel guide,travel articles,tavel destinations,travel search engine" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Travel Invasion</title>
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="img/fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+    <link rel="manifest" href="img/fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="js/lib/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--[if lt IE 9 ]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-55880703-1']);
+      _gaq.push(['_trackPageview']);
 
-		<link rel="stylesheet" href="js/lib/leaflet/leaflet.css" />
-		<link rel="stylesheet" href="css/style.css" />
-		
- 
-		<!--[if lt IE 9 ]>
-			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]--> 
- 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-		<script type="text/javascript">
-
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-55880703-1']);
-		  _gaq.push(['_trackPageview']);
-
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
-
-		</script>
- 
-	</head>
- 
-	<body class="" lang="en-US">
-
- 		<div id="left-panel" class="map">
- 			<div id="search">
- 				<input type="text" name="search" placeholder="Where would you like to travel?">
- 				<img src="img/search.png" alt="search">
- 			</div>
- 			<div id="message"></div>
-			<div id="map"></div>
-			<div id="feedback">				
-				<form id="feedback-form">
-					<h2>What do you think about Travel Invasion?</h2>
-					<p>Your opinion matters a lot for us! Thank you for your time and participation.</p>
-					<ul>
-						<li>Sex: 
-							<input type="radio" name="sex" value="male">Male
-							<input type="radio" name="sex" value="female">Female
-						</li>
-						<li>Age: 
-							<input type="radio" name="age" value="under18">&lt;18
-							<input type="radio" name="age" value="18-25">18-25
-							<input type="radio" name="age" value="26-35">26-35
-							<input type="radio" name="age" value="more36">&gt;36
-						</li>
-
-						<li style="margin-top:2em;"><input type="checkbox" name="profile" value="interested_to_use">Would you be interested in using Travel Invasion?</li>
-						<li><input type="checkbox" name="profile" value="easy_to_use">Do you find Travel Invasion easy to use?</li>
-						<li><input type="checkbox" name="profile" value="travel_often">Do you travel often?</li>
-						<li><input type="checkbox" name="profile" value="blogger">Do you write a blog?</li>
-						<li><input type="checkbox" name="profile" value="travel_blogger">Do you write a travel blog?</li>
-
-						<li style="margin-top:2em;">What would you you Travel Invasion for?</li>
-						<li><input type="checkbox" name="purpose" value="plan_travel">plan your travel
-							<input type="checkbox" name="purpose" value="travel_inspirations">find travel inspirations
-							<input type="checkbox" name="purpose" value="brows_blogs">browse travel blogs
-						</li>	
-
-						<li style="margin-top:2em;"><textarea name="others" rows="1" placeholder="Any other feedback you might like to add"></textarea></li>
-						<li><textarea name="newsletter" rows="1" placeholder="Your email if you would like to hear news from us"></textarea></li>						
-
-						<li style="margin-top:2em;margin-bottom:2em;"><a id="feedback-submit-btn" href="#">Submit</a></li>					
-					</ul>
-				</form>				
-			</div>
-			<div id="register">				
-				<form id="register-form">
-					<h2>Would you like your blog to appear in Travel Invasion?</h2>
-					<p style="width: 90%;">Give us the link to your blog and we will analyze the articles you wrote and put them on our map. We will be automatically checking from time to time if you wrote something new so you do not need to worry about the updates.</p>
-					<p>The only thing we require for now is that your blog has a RSS feed.</p>
-					<ul>
-						<li><textarea name="blog_url" rows="1" placeholder="URL address of your blog"></textarea></li>
-						<li style="margin-top:1em;margin-bottom:3em;"><input type="checkbox" name="RSSdunno" value="true">I do not know what RSS feed is.</li>	
-						<li style="margin-top:2em;"><a id="register-submit-btn" href="#">Register</a></li>					
-					</ul>
-				</form>				
-			</div>
-			<div id="blog">
-				<iframe src="http://blog.travelinvasion.net/" width="100%" height="100%"></iframe>
-			</div>
-		</div>
-		<div id="right-panel">
-			<div id="intro">
-				<img src="img/logo.svg" style="width: 80%; margin-bottom:2em;" alt="TravelInvasion logo"/>
-				<p>Welcome to Travel Invasion - your alternative travel guide.</p>
-				<p>Are you going to travel and would like to read interesting articles about your destination? Are you bored with typical travel guides which only mention mainstream tourist attractions?</p> 
-				<p>This website is for you! You can think of it as a search engine for travel blogs which allows you to search by destination; directly on the map. There are so many wonderful people travelling all over the world and sharing their experiences. All we want is to give you an easier access to those resources.</p>
-
-				<ul id="share-panel" style="margin-top: 10em;">
-					<li><a href="https://www.facebook.com/sharer/sharer.php?u=travelinvasion.net" target="_blank"><img src="img/social_media/social-facebook.png" alt="Share on Facebook"/></a></li>
-					<li><a href="https://twitter.com/home?status=travelinvasion.net" target="_blank"><img src="img/social_media/social-twitter.png" alt="Share on Twitter"/></a></li>
-					<li><a href="https://plus.google.com/share?url=travelinvasion.net" target="_blank"><img src="img/social_media/social-google-plus.png" alt="Share on Google Plus"/></a></li>
-					<li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=travelinvasion.net&amp;title=Travel%20Invasion&amp;summary=Welcome%20to%20Travel%20Invasion%20-%20your%20alternative%20travel%20guide&amp;source=" target="_blank"><img src="img/social_media/social-linkedin.png" alt="Share on LinkedIn"/></a></li>
-					<li><a href="https://pinterest.com/pin/create/button/?url=travelinvasion.net&amp;media=http://travelinvasion.net/img/logo.svg&amp;description=Welcome%20to%20Travel%20Invasion%20-%20your%20alternative%20travel%20guide" target="_blank"><img src="img/social_media/social-pintrest.png" alt="Share on Pintrest"/></a></li>
-				</ul>
-
-			</div>
-			<div id="articles">
-			</div>
-		</div>
-        <div id="menu">
-        	<div class="desktop">
-	            <ul>
-	                <li id="menu-home"><img src="img/logo_mini.svg" style="width:40px;margin:10px;" alt="TravelInvasion mini logo" /><span>Home</span></li>
-	            </ul>
-	            <ul style="position: absolute;bottom: 0px;">            
-	                <li id="menu-map"><img src="img/appbar.map.treasure.png" alt="Back to map"/><span>Map</span></li>
-	                <li id="menu-blog"><img src="img/appbar.rss.png" alt="Blog"/><span>Blog</span></li>
-	                <li id="menu-register"><img src="img/appbar.book.hardcover.open.writing.png" alt="Register blog"/><span>Register</span></li>
-	                <li id="menu-feedback"><img src="img/appbar.thumbs.up.png" alt="Submit feedback"/><span>Feedback</span></li>
-	            </ul>
-        	</div>
-        	<div class="mobile">
-        		<img src="img/logo_mini.svg" style="width:40px;" alt="TravelInvasion mini logo" />
-        		<h3>Travel Invasion</h3>
-        	</div>
-        </div>
-		
-		<script src="js/lib/leaflet/leaflet.js"></script>
-		<script src="js/main.js"></script>
-		
-	</body>
- 
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body class="" lang="en-US">
+    <div id="left-panel" class="map">
+      <div id="message"></div>
+      <div id="map"></div>
+    </div>
+    <div id="right-panel">
+      <div id="intro">
+        <img src="img/logo.svg" style="width: 80%; margin-bottom:2em;" alt="TravelInvasion logo"/>
+        <p>Welcome to Travel Invasion - your alternative travel guide.</p>
+        <p>Are you going to travel and would like to read interesting articles about your destination? Are you bored with typical travel guides which only mention mainstream tourist attractions?</p>
+        <p>This website is for you! You can think of it as a search engine for travel blogs which allows you to search by destination; directly on the map. There are so many wonderful people travelling all over the world and sharing their experiences. All we want is to give you an easier access to those resources.</p>
+        <ul id="share-panel" style="margin-top: 10em;">
+          <li><a href="https://www.facebook.com/sharer/sharer.php?u=travelinvasion.net" target="_blank"><img src="img/social_media/social-facebook.png" alt="Share on Facebook"/></a></li>
+          <li><a href="https://twitter.com/home?status=travelinvasion.net" target="_blank"><img src="img/social_media/social-twitter.png" alt="Share on Twitter"/></a></li>
+          <li><a href="https://plus.google.com/share?url=travelinvasion.net" target="_blank"><img src="img/social_media/social-google-plus.png" alt="Share on Google Plus"/></a></li>
+          <li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=travelinvasion.net&amp;title=Travel%20Invasion&amp;summary=Welcome%20to%20Travel%20Invasion%20-%20your%20alternative%20travel%20guide&amp;source=" target="_blank"><img src="img/social_media/social-linkedin.png" alt="Share on LinkedIn"/></a></li>
+          <li><a href="https://pinterest.com/pin/create/button/?url=travelinvasion.net&amp;media=http://travelinvasion.net/img/logo.svg&amp;description=Welcome%20to%20Travel%20Invasion%20-%20your%20alternative%20travel%20guide" target="_blank"><img src="img/social_media/social-pintrest.png" alt="Share on Pintrest"/></a></li>
+        </ul>
+      </div>
+      <div id="articles">
+      </div>
+    </div>
+    <div id="menu">
+      <div class="desktop">
+        <ul>
+          <li id="menu-home"><img src="img/logo_mini.svg" style="width:40px;margin:10px;" alt="TravelInvasion mini logo" /><span>Home</span></li>
+        </ul>
+      </div>
+      <div class="mobile">
+        <img src="img/logo_mini.svg" style="width:40px;" alt="TravelInvasion mini logo" />
+        <h3>Travel Invasion</h3>
+      </div>
+    </div>
+    <script src="js/lib/leaflet/leaflet.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </body>
 </html>

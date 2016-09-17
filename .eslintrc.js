@@ -11,7 +11,8 @@ module.exports = {
 
   "globals": {
     "$": true,
-    "L": true
+    "L": true,
+    "_gaq": true
   },
 
   "rules": {
@@ -188,7 +189,7 @@ module.exports = {
  */
     "comma-dangle": [2, "never"],    // http://eslint.org/docs/rules/comma-dangle
     "no-cond-assign": [2, "always"], // http://eslint.org/docs/rules/no-cond-assign
-    "no-console": 1,                 // http://eslint.org/docs/rules/no-console
+    "no-console": 0,                 // http://eslint.org/docs/rules/no-console
     "no-constant-condition": 1,      // http://eslint.org/docs/rules/no-constant-condition
     "no-dupe-args": 2,
     "no-dupe-keys": 2,               // http://eslint.org/docs/rules/no-dupe-keys
